@@ -1,0 +1,10 @@
+---
+- name: Automated Linux Server Setup
+  hosts: webservers
+  become: true
+
+
+  roles:
+    - ../roles/users
+    - ../roles/packages
+    - ../roles/security
