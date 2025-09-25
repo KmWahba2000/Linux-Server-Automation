@@ -3,11 +3,11 @@
 ## What Was Done
 
 * In this project, I automated the configuration of a brand-new **Ubuntu** server running as an **EC2 instance** on **AWS**.
-* The EC2 instance was configured to allow **SSH** connections by modifying the **security group** of the instance and the **NACL** of the subnet.
+* The EC2 instance was configured to allow **SSH** connection by modifying the **security group** of the instance and the **NACL** of the subnet.
 * All configurations were done automatically using `Ansible`.
 * Created an administrator user and gave it the necessary permissions and groups.
 * Ran system **update** & **upgrade** and installed essential packages.
-* Applied security configurations to the server such as `firewalld` to allow **SSH** connections.
+* Applied security configurations to the server such as `firewalld` to allow **SSH** connection.
 
 ## Steps
 
