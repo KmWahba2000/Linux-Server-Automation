@@ -1,0 +1,21 @@
+---
+- name: Create admin user
+  user:
+    name: admin
+    shell: /bin/bash
+    create_home: yes
+    state: present
+
+- name: Ensure .ssh directory exists for admin
+  file:
+    path: /home/admin/.ssh
+    state: directory
+    owner: admin
+    group: admin
+    mode: '0700'
+
+- name: Add admin public SSH key
+  authorized_key:
+    user: admin
+    state: present
+    key: "{{ lookup('file', '~/.ssh/admin_key.pub') }}"

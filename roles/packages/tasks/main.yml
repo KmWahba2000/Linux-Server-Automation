@@ -1,0 +1,38 @@
+---
+- name: Upgrade system packages
+  apt:
+    update_cache: yes
+    upgrade: dist
+
+- name: Remove UFW
+  apt:
+    name: ufw
+    state: absent
+
+- name: Install basic packages
+  apt:
+    name:
+      - firewalld
+      - vim
+      - htop
+      - curl
+      - wget
+    state: present
+
+- name: Ensure firewalld is running
+  service:
+    name: firewalld
+    state: started
+    enabled: true
+
+- name: Set firewalld default zone to public
+  command: firewall-cmd --set-default-zone=public
+  notify: reload firewalld
+
+- name: Allow SSH in firewalld
+  firewalld:
+    service: ssh
+    permanent: true
+    state: enabled
+    immediate: true
+  notify: reload firewalld

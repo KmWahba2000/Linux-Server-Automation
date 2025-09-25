@@ -1,0 +1,17 @@
+---
+- name: Allow admin user to have passwordless sudo
+  copy:
+    dest: /etc/sudoers.d/admin
+    content: "admin ALL=(ALL) NOPASSWD:ALL\n"
+    owner: root
+    group: root
+    mode: '0440'
+
+- name: Disable root login via SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin no'
+    state: present
+    backup: yes
+  notify: restart ssh
