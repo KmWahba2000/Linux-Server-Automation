@@ -18,8 +18,8 @@
 * Launching an instance in a public subnet with a public IP address, or preferably an **Elastic IP** to ensure availability when the instance reboots.
 * Modifying the ***Inbound*** rules of the created Security Group to allow **SSH** connections from the **Ansible server**, and the ***Outbound*** rules to allow internet traffic for updates.
 
-![alt text](assets/Inbound-Rules.png)
-![alt text](assets/Outbound-Rules.png)
+![alt text](assets/SG-Inbound-Rules.png)
+![alt text](assets/SG-Outbound-Rules.png)
 
 * Creating a NACL and adding the correct ***Inbound*** and ***Outbound*** rules.
 
@@ -40,7 +40,7 @@ ssh -i "SAM.pem" ubuntu@ec2-3-90-56-212.compute-1.amazonaws.com
 
 * **Folder structure:**
 
-![alt text](assets/image.png)
+![alt text](assets/folder-structure.png)
 
 * **inventory/**
 
@@ -68,7 +68,7 @@ ssh -i "SAM.pem" ubuntu@ec2-3-90-56-212.compute-1.amazonaws.com
 
 ### 3- Testing Connectivity with the Server
 
-![alt text](assets/ping.png)
+![alt text](assets/test-connection.png)
 
 ---
 
@@ -96,7 +96,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/main.yml
 id admin
 ```
 
-![alt text](assets/id-admin.png)
+![alt text](assets/admin-user-status.png)
 
 * **Check if packages were installed successfully:**
 
