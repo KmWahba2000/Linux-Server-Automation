@@ -9,8 +9,6 @@
 * Ran system **update** & **upgrade** and installed essential packages.
 * Applied security configurations to the server such as `firewalld` to allow **SSH** connections.
 
----
-
 ## Steps
 
 ### 1- Preparing the EC2 Instance
