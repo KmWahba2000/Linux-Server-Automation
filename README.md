@@ -14,7 +14,7 @@
 ### 1- Preparing the EC2 Instance
 
 * Launching an instance in a public subnet with a public IP address, or preferably an **Elastic IP** to ensure availability when the instance reboots.
-* Modifying the ***Inbound*** rules of the created Security Group to allow **SSH** connections from the **Ansible server**, and the ***Outbound*** rules to allow internet traffic for updates.
+* Modifying the ***Inbound*** rules of the created Security Group to allow **SSH** connection from the **Ansible server**, and the ***Outbound*** rules to allow internet traffic for updates.
 
 ![alt text](assets/SG-Inbound-Rules.png)
 ![alt text](assets/SG-Outbound-Rules.png)
